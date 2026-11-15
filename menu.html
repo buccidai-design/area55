@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メニュー｜大衆酒場 エリア55</title>
+<style>
+  :root { 
+    --green: #0a3d2c; 
+    --gold: #f5c518; 
+    --dark: #111111; 
+    --light: #f7f7f5; 
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.7; color: #333; background: var(--light); }
+
+  header.simple {
+    background: var(--green);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  header.simple h1 { font-size: 1.8rem; }
+  header.simple a { color: white; text-decoration: none; font-size: 0.95rem; }
+
+  nav { background: var(--green); display: flex; justify-content: center; flex-wrap: wrap; }
+  nav a { color: white; text-decoration: none; padding: 1rem 1.5rem; display: block; }
+  nav a:hover { background: var(--gold); color: var(--green); }
+
+  section { max-width: 900px; margin: 2rem auto; padding: 0 1.2rem; }
+  h2 { color: var(--green); border-bottom: 3px solid var(--gold); padding-bottom: 0.4rem; margin: 2rem 0 1.2rem; }
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed #ddd;
+  }
+  .menu-item .name { font-weight: 500; }
+  .menu-item .price { font-weight: bold; color: var(--green); white-space: nowrap; margin-left: 1rem; }
+  .note { font-size: 0.9rem; color: #666; margin-top: 0.3rem; }
+  .category { background: white; padding: 1.2rem 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 1.5rem; }
+  footer { background: var(--green); color: #eee; text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 0.9rem; }
+  .btn { display: inline-block; background: var(--green); color: white; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 30px; margin: 0.3rem; }
+  .btn:hover { background: var(--gold); color: var(--green); }
+  .source { font-size: 0.85rem; color: #888; text-align: center; margin-top: 2rem; }
+
+  @media (max-width: 600px) {
+    .menu-item { flex-direction: column; gap: 0.2rem; }
+    .menu-item .price { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<header class="simple">
+  <a href="index.html">← トップページへ戻る</a>
+  <h1>メニュー</h1>
+</header>
+
+<nav>
+  <a href="index.html">トップ</a>
+  <a href="#drink">ドリンク</a>
+  <a href="#food">フード</a>
+  <a href="#lunch">ランチ</a>
+</nav>
+
+<section>
+  <p class="source">※メニュー情報は食べログ・ホットペッパー・Googleビジネス関連の公開情報をもとに掲載しています。最新の内容・価格は店頭にてご確認ください。</p>
+
+  <h2 id="drink">ドリンクメニュー</h2>
+  <div class="category">
+    <div class="menu-item"><span class="name">ハイボール</span><span class="price">450円〜</span></div>
+    <div class="menu-item"><span class="name">ブラックニッカハイボール</span><span class="price">500円</span></div>
+    <div class="menu-item"><span class="name">アサヒスーパードライ</span><span class="price">700円</span></div>
+    <div class="menu-item"><span class="name">生ビール</span><span class="price">500円〜</span></div>
+    <div class="menu-item"><span class="name">ソフトドリンク</span><span class="price">300円〜</span></div>
+    <div class="menu-item"><span class="name">オリジナルカクテル（カープサワーなど）</span><span class="price">600円〜</span></div>
+    <div class="menu-item"><span class="name">日本酒・焼酎各種</span><span class="price">500円〜</span></div>
+    <p class="note">※メガサイズあり。種類により価格が異なります。詳しくは店頭で。</p>
+  </div>
+
+  <h2 id="food">フード・おつまみ</h2>
+  <div class="category">
+    <div class="menu-item"><span class="name">ツマミになるポテトサラダ</span><span class="price">290円</span></div>
+    <div class="menu-item"><span class="name">砂肝の直火焼き</span><span class="price">450円</span></div>
+    <div class="menu-item"><span class="name">あさりの唐揚げ</span><span class="price">600円</span></div>
+    <div class="menu-item"><span class="name">ささみの一夜干し</span><span class="price">約540円</span></div>
+    <div class="menu-item"><span class="name">たこ焼き（5個）</span><span class="price">400〜450円</span></div>
+    <div class="menu-item"><span class="name">たこ焼き（10〜12個）</span><span class="price">800円前後</span></div>
+    <div class="menu-item"><span class="name">鶏の唐揚げ</span><span class="price">650円</span></div>
+    <div class="menu-item"><span class="name">炙りチャーシューねぎまみれ</span><span class="price">要確認</span></div>
+    <div class="menu-item"><span class="name">三品選べるセット</span><span class="price">1,000円</span></div>
+    <p class="note">※たこ焼きはまとめ焼きのため、少しお時間をいただく場合があります。<br>味はソース・ねぎ塩マヨ・レモン&ペッパー・醤油マヨから選択可能。</p>
+  </div>
+
+  <h2 id="lunch">ランチ</h2>
+  <div class="category">
+    <div class="menu-item"><span class="name">カレーライス</span><span class="price">700円〜</span></div>
+    <div class="menu-item"><span class="name">その他定食・日替わり</span><span class="price">800円前後</span></div>
+    <p class="note">※ランチは毎日2升のご飯を炊いており、なくなり次第終了となります。<br>ご飯・汁物おかわり自由の日もあります。Instagramで最新情報をチェックしてください。</p>
+  </div>
+
+  <div style="text-align:center; margin:2.5rem 0;">
+    <p>詳しいメニュー・本日のおすすめは店頭またはInstagramにてご確認ください。</p>
+    <a class="btn" href="https://www.instagram.com/area55_kumamoto/" target="_blank">Instagramを見る</a>
+    <a class="btn" href="index.html">トップページへ戻る</a>
+  </div>
+</section>
+
+<footer>
+  <p>大衆酒場 エリア55　｜　飯と酒とスポーツ観戦の聖地</p>
+  <p>© Area55</p>
+</footer>
+</body>
+</html>
