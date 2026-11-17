@@ -24,22 +24,38 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: #0a3d2c;
   }
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(10,61,44,0.45), rgba(10,61,44,0.7));
+    background: linear-gradient(to bottom, rgba(255,255,255,0.25), rgba(255,255,255,0.15));
   }
   .hero-content { position: relative; z-index: 1; padding: 1rem; }
   .hero h1 {
-    font-size: 3rem;
+    font-size: 4.2rem;
     letter-spacing: 0.05em;
-    text-shadow: 0 3px 15px rgba(0,0,0,0.6);
-    margin-bottom: 0.4rem;
+    text-shadow: none;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    color: #0a3d2c;
+    line-height: 1.15;
   }
-  .hero p { font-size: 1.25rem; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
+  .hero p { 
+    font-size: 1.4rem; 
+    text-shadow: none; 
+    color: #0a3d2c;
+    margin-top: 0.8rem;
+  }
+  .hero p::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: #0a3d2c;
+    margin: 0.6rem auto 0;
+  }
 
   .logo-area {
     text-align: center;
@@ -73,7 +89,7 @@
 
   @media (max-width: 600px) {
     .hero { height: 50vh; min-height: 300px; }
-    .hero h1 { font-size: 2rem; }
+    .hero h1 { font-size: 2.8rem; }
     .hero p { font-size: 1.05rem; }
     nav a { padding: 0.8rem 1rem; font-size: 0.95rem; }
     .logo-area img { max-width: 200px; }
@@ -83,7 +99,7 @@
 <body>
 <div class="hero">
   <div class="hero-content">
-    <h1>大衆酒場 エリア55</h1>
+    <h1>大衆酒場<br>エリア55</h1>
     <p>飯と酒とスポーツ観戦の聖地</p>
   </div>
 </div>
@@ -95,20 +111,23 @@
 <div id="google_translate_element" style="text-align:center; padding:0.8rem 0; background:#fff;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'ja',
-    includedLanguages: 'en,zh-CN,zh-TW,ko,th,vi,es,fr,de,pt',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
+  try {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ja',
+      includedLanguages: 'en,zh-CN,zh-TW,ko,th,vi,es,fr,de,pt',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  } catch(e) {}
 }
 </script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 <nav>
   <a href="#about">お店について</a>
   <a href="#news">最新情報</a>
   <a href="#hours">営業時間</a>
+  <a href="#smoking">喫煙</a>
   <a href="seats.html">座席</a>
   <a href="menu.html#limited">期間限定</a>
   <a href="menu.html">メニュー</a>
@@ -128,6 +147,13 @@ function googleTranslateElementInit() {
   <div class="highlight">
     <h3>スタジアム気分だけど、野球以外も大歓迎！</h3>
     <p>店内の雰囲気はスタジアムをイメージしていますが、野球以外のスポーツ（サッカー、バスケ、格闘技など）の観戦もしています。そして何より、<strong>スポーツに全く興味がない方でも絶対に楽しめるお店</strong>です。美味しいご飯とお酒があれば十分。気軽に来てください！</p>
+  </div>
+
+  <div class="highlight">
+    <h3>なぜ緑が基調になってるの？</h3>
+    <p>日本のプロ野球には緑色のチームがないので、どの球団のファンでも気兼ねなく来られるよう中立の意味を込めています。<br>
+    また、店主が監督を務める「船場アバウティーズ」のユニフォームが、漫画『ストッパー毒島』に登場する京浜アスレチックスと同じデザインのため、その緑を基調にしています。<br>
+    <a href="https://www.instagram.com/senba_abouties/" target="_blank" style="color:var(--green); font-weight:bold;">船場アバウティーズのInstagramを見る</a></p>
   </div>
 
   <div class="highlight">
@@ -175,6 +201,15 @@ function googleTranslateElementInit() {
     <p><strong>祝前日・祝後日</strong>　11:30〜14:00 / 18:00〜01:00</p>
     <p><strong>定休日</strong>　月曜日・日曜日（日曜は予約で開ける場合あり）</p>
     <p style="margin-top:0.8rem; font-size:0.95rem;">※ランチは毎日2升のご飯を炊いており、なくなり次第終了となります。</p>
+  </div>
+</section>
+
+<section id="smoking">
+  <h2>喫煙可能店</h2>
+  <div class="hours" style="text-align:center;">
+    <p style="margin-bottom:1rem;">エリア55は<strong>喫煙可能</strong>なお店です。</p>
+    <img src="smoking-ok.jpg" alt="喫煙可能店ポスター" style="max-width:100%; height:auto; border-radius:10px; border:2px solid var(--gold);">
+    <p style="margin-top:1rem; font-size:0.95rem;">分煙のご希望がある場合はお気軽にスタッフまでお声がけください。</p>
   </div>
 </section>
 
@@ -256,21 +291,25 @@ function googleTranslateElementInit() {
 </footer>
 
 <script>
-fetch('https://api.countapi.xyz/hit/area55-kumamoto/visits')
-  .then(res => {
-    if (!res.ok) throw new Error('Network error');
-    return res.json();
-  })
-  .then(data => {
-    if (data && data.value !== undefined) {
-      document.getElementById('counter').textContent = data.value.toLocaleString();
-    } else {
+try {
+  fetch('https://api.countapi.xyz/hit/area55-kumamoto/visits')
+    .then(res => {
+      if (!res.ok) throw new Error('Network error');
+      return res.json();
+    })
+    .then(data => {
+      if (data && data.value !== undefined) {
+        document.getElementById('counter').textContent = data.value.toLocaleString();
+      } else {
+        document.getElementById('counter').textContent = '---';
+      }
+    })
+    .catch(() => {
       document.getElementById('counter').textContent = '---';
-    }
-  })
-  .catch(() => {
-    document.getElementById('counter').textContent = '---';
-  });
+    });
+} catch(e) {
+  document.getElementById('counter').textContent = '---';
+}
 </script>
 </body>
 </html>
