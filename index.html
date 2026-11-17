@@ -103,12 +103,14 @@ function googleTranslateElementInit() {
   }, 'google_translate_element');
 }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <nav>
   <a href="#about">お店について</a>
+  <a href="#news">最新情報</a>
   <a href="#hours">営業時間</a>
   <a href="seats.html">座席</a>
+  <a href="menu.html#limited">期間限定</a>
   <a href="menu.html">メニュー</a>
   <a href="#access">アクセス</a>
   <a href="#reserve">予約</a>
@@ -144,6 +146,25 @@ function googleTranslateElementInit() {
 <section style="text-align:center; margin:1rem auto 2.5rem;">
   <img src="inside.jpg" alt="特別な試合の日の店内" style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.15);">
   <p style="margin-top:0.8rem; font-size:0.9rem; color:#666;">※特別な試合の日はこんな感じです</p>
+</section>
+
+<section id="news">
+  <h2>最新情報</h2>
+  <div class="highlight">
+    <h3>HOWDY HAPPY HOUR 始まりました！</h3>
+    <p>オフシーズン限定で <strong>18:00〜20:00</strong> のハッピーアワーを実施中です。<br>
+    生ビール・ハイボールが <strong>500円</strong>！さらにセンベロメニュー（飲み物1杯＋おつまみ2品）が <strong>1,000円</strong> で楽しめます。<br>
+    詳しくはメニューページの「期間限定」をご覧ください。</p>
+    <p style="margin-top:0.6rem;"><a class="btn" href="menu.html#limited">期間限定を見る</a></p>
+  </div>
+  <div class="highlight">
+    <h3>忘年会にコースはいかがですか？</h3>
+    <p>今年の忘年会はエリア55で！<br>
+    <strong>Aコース</strong>（選べる2品＋2時間飲み放題）4,000円<br>
+    <strong>Bコース</strong>（11品＋3時間飲み放題）5,000円<br>
+    貸切も対応可能です（10名様以上）。幹事様分無料の特典もあります。ぜひご相談ください！</p>
+    <p style="margin-top:0.8rem;"><a class="btn" href="menu.html#course">コースの詳細を見る</a></p>
+  </div>
 </section>
 
 <section id="hours">
@@ -236,9 +257,16 @@ function googleTranslateElementInit() {
 
 <script>
 fetch('https://api.countapi.xyz/hit/area55-kumamoto/visits')
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) throw new Error('Network error');
+    return res.json();
+  })
   .then(data => {
-    document.getElementById('counter').textContent = data.value.toLocaleString();
+    if (data && data.value !== undefined) {
+      document.getElementById('counter').textContent = data.value.toLocaleString();
+    } else {
+      document.getElementById('counter').textContent = '---';
+    }
   })
   .catch(() => {
     document.getElementById('counter').textContent = '---';
